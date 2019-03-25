@@ -1,0 +1,39 @@
+<!-- -->
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+        <span ion-text>기기 찾기</span>
+        </ion-title>
+    </ion-navbar>
+
+    <!--  -->
+    <ion-toolbar padding color="light">
+        <p ion-text no-margin class="text-white">
+            <strong>{{ numOfDevices || 0 }}</strong> 개의 기기 찾음
+        </p>
+    </ion-toolbar>
+</ion-header>
+      
+<ion-content padding class="trips detail-bg">
+    <!--list of devices-->
+    <div class="trip card" *ngFor="let device of detectedDevices" tappable (click)="addDevice()" margin-bottom>
+        <div class="background border-bottom" [ngStyle]="{'background-image': 'url(' + device.thumb + ')'}">
+        <div class="background-filter rlt">
+            <div class="align-top" padding-left padding-right padding-top>
+                <span class="pull-right" color="light" ion-text><strong>{{ '생성일: '+ device.created_time }}</strong></span>
+            </div>
+            <div class="align-bottom" padding-left padding-right>
+            <h6 class="pull-left text-white" ion-text>{{ device.name }}</h6>
+            <h6 class="pull-right text-white" ion-text>{{ 'ID: ' + device.id }}</h6>
+            <div class="clear"></div>
+            </div>
+        </div>
+        </div>
+        <div class="padding-sm primary-bg">
+        <ion-icon name="time" class="text-white"></ion-icon>
+        <!-- <span ion-text class="text-white">{{ '생성일: '+ device.created_time }}</span> -->
+        <span ion-text color="light"><strong>필터교체까지 남은시간: </strong> <span ion-text  class="text-green bold">{{ device.time }}</span></span>
+        </div>
+    </div>
+</ion-content>
+      

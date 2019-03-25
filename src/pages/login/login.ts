@@ -1,6 +1,8 @@
 import {Component} from "@angular/core";
 import {NavController, AlertController, ToastController, MenuController} from "ionic-angular";
-import {HomePage} from "../home/home";
+// import {HomePage} from "../home/home";
+// import {DevicesPage} from "../devices/devices";
+import {DeviceDetectionPage} from "../device-detection/device-detection";
 import {RegisterPage} from "../register/register";
 
 @Component({
@@ -9,7 +11,7 @@ import {RegisterPage} from "../register/register";
 })
 export class LoginPage {
 
-  constructor(public nav: NavController, public forgotCtrl: AlertController, public menu: MenuController, public toastCtrl: ToastController) {
+  constructor(public nav: NavController, public alertCtrl: AlertController, public menu: MenuController, public toastCtrl: ToastController) {
     this.menu.swipeEnable(false);
   }
 
@@ -20,11 +22,31 @@ export class LoginPage {
 
   // login and go to home page
   login() {
-    this.nav.setRoot(HomePage);
+    //this.nav.setRoot(DevicesPage);
+    this.showAlert(() => {
+      this.nav.push(DeviceDetectionPage);
+    });
+  }
+
+  showAlert(callback) {
+    const alert = this.alertCtrl.create({
+      title: '기기 찾기',
+      subTitle: '기기 찾기를 시작하기 전 기기와 스마트폰이 같은 wi-fi 내에 있는지 확인하십시오.',
+      buttons: [
+        {
+          text: '확인',
+          role: 'ok',
+          handler: () => {
+            callback();
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
   forgotPass() {
-    let forgot = this.forgotCtrl.create({
+    let forgot = this.alertCtrl.create({
       title: 'Forgot Password?',
       message: "Enter you email address to send a reset link password.",
       inputs: [

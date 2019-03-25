@@ -1,7 +1,7 @@
 {
   "name": "ionic3-start-theme",
   "version": "0.0.3",
-  "author": "João Firmino <firminoata@gmail.com>",
+  "author": "Frozenmiya <frozenmiya@gmail.com>",
   "homepage": "https://market.ionicframework.com/themes/ionic3-start-theme",
   "scripts": {
     "clean": "ionic-app-scripts clean",

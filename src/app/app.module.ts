@@ -24,8 +24,10 @@ import {SearchLocationPage} from "../pages/search-location/search-location";
 import {TripDetailPage} from "../pages/trip-detail/trip-detail";
 import {TripsPage} from "../pages/trips/trips";
 import {DevicesPage} from "../pages/devices/devices";
+import {DeviceDetectionPage} from "../pages/device-detection/device-detection";
 import {LocalWeatherPage} from "../pages/local-weather/local-weather";
-import { DeviceService } from "../services/device-service";
+import {DeviceService} from "../services/device-service";
+import {DeviceDetectionService} from "../services/device-detection-service";
 
 // import services
 // end import services
@@ -47,7 +49,8 @@ import { DeviceService } from "../services/device-service";
     SearchLocationPage,
     TripDetailPage,
     TripsPage,
-    DevicesPage
+    DevicesPage,
+    DeviceDetectionPage
   ],
   imports: [
     BrowserModule,
@@ -75,7 +78,8 @@ import { DeviceService } from "../services/device-service";
     SearchLocationPage,
     TripDetailPage,
     TripsPage,
-    DevicesPage
+    DevicesPage,
+    DeviceDetectionPage
   ],
   providers: [
     StatusBar,
@@ -84,6 +88,7 @@ import { DeviceService } from "../services/device-service";
     ActivityService,
     TripService,
     DeviceService,
+    DeviceDetectionService,
     WeatherProvider
   ]
 })
