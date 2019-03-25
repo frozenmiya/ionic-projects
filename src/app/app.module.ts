@@ -22,6 +22,7 @@ import {NotificationsPage} from "../pages/notifications/notifications";
 import {RegisterPage} from "../pages/register/register";
 import {SearchLocationPage} from "../pages/search-location/search-location";
 import {TripDetailPage} from "../pages/trip-detail/trip-detail";
+import {DeviceDetailPage} from "../pages/device-detail/device-detail";
 import {TripsPage} from "../pages/trips/trips";
 import {DevicesPage} from "../pages/devices/devices";
 import {DeviceDetectionPage} from "../pages/device-detection/device-detection";
@@ -50,7 +51,8 @@ import {DeviceDetectionService} from "../services/device-detection-service";
     TripDetailPage,
     TripsPage,
     DevicesPage,
-    DeviceDetectionPage
+    DeviceDetectionPage,
+    DeviceDetailPage
   ],
   imports: [
     BrowserModule,
@@ -79,7 +81,8 @@ import {DeviceDetectionService} from "../services/device-detection-service";
     TripDetailPage,
     TripsPage,
     DevicesPage,
-    DeviceDetectionPage
+    DeviceDetectionPage,
+    DeviceDetailPage
   ],
   providers: [
     StatusBar,

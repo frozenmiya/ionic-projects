@@ -15,7 +15,8 @@ export class DeviceService {
 
   getItem(id) {
     for (var i = 0; i < this.devices.length; i++) {
-      if (this.devices[i].id === parseInt(id)) {
+      if (this.devices[i].id == id) {
+        console.log('ddddd : ',this.devices[i]);
         return this.devices[i];
       }
     }

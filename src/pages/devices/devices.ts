@@ -3,7 +3,7 @@ import {NavController, AlertController, PopoverController} from "ionic-angular";
 import {Storage} from '@ionic/storage';
 
 import {DeviceService} from "../../services/device-service";
-import {TripDetailPage} from "../trip-detail/trip-detail";
+import {DeviceDetailPage} from "../device-detail/device-detail";
 import {DeviceDetectionPage} from "../device-detection/device-detection";
 import {NotificationsPage} from "../notifications/notifications";
 import {SettingsPage} from "../settings/settings";
@@ -47,7 +47,7 @@ export class DevicesPage {
   // view trip detail
   viewDetail(id) {
     console.log('device viewDetail');
-    this.nav.push(TripDetailPage, {id: id});
+    this.nav.push(DeviceDetailPage, {id: id});
   }
 
   findDevice() {
