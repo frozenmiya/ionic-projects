@@ -23,7 +23,9 @@ import {RegisterPage} from "../pages/register/register";
 import {SearchLocationPage} from "../pages/search-location/search-location";
 import {TripDetailPage} from "../pages/trip-detail/trip-detail";
 import {TripsPage} from "../pages/trips/trips";
+import {DevicesPage} from "../pages/devices/devices";
 import {LocalWeatherPage} from "../pages/local-weather/local-weather";
+import { DeviceService } from "../services/device-service";
 
 // import services
 // end import services
@@ -44,7 +46,8 @@ import {LocalWeatherPage} from "../pages/local-weather/local-weather";
     RegisterPage,
     SearchLocationPage,
     TripDetailPage,
-    TripsPage
+    TripsPage,
+    DevicesPage
   ],
   imports: [
     BrowserModule,
@@ -71,7 +74,8 @@ import {LocalWeatherPage} from "../pages/local-weather/local-weather";
     RegisterPage,
     SearchLocationPage,
     TripDetailPage,
-    TripsPage
+    TripsPage,
+    DevicesPage
   ],
   providers: [
     StatusBar,
@@ -79,6 +83,7 @@ import {LocalWeatherPage} from "../pages/local-weather/local-weather";
     Keyboard,
     ActivityService,
     TripService,
+    DeviceService,
     WeatherProvider
   ]
 })

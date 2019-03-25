@@ -18,6 +18,10 @@ export class DevicesPage {
 
   // view trip detail
   viewDetail(id) {
-    this.nav.push(TripDetailPage, {id: id}); //ffff
+    this.nav.push(TripDetailPage, {id: id});
+  }
+
+  findDevice() {
+    this.nav.push(TripDetailPage, {id: 0});
   }
 }
