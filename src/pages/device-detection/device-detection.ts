@@ -1,6 +1,9 @@
 import {Component} from "@angular/core";
+import {Storage} from '@ionic/storage';
 import {NavController, LoadingController} from "ionic-angular";
+
 import {DeviceDetectionService} from "../../services/device-detection-service";
+import {DevicesPage} from "../devices/devices";
 
 
 @Component({
@@ -12,7 +15,7 @@ export class DeviceDetectionPage {
   public detectedDevices: any;
   public numOfDevices: 0;
 
-  constructor(public nav: NavController, public deviceDetectionService: DeviceDetectionService, public loadingCtrl: LoadingController) {
+  constructor(private storage: Storage, public nav: NavController, public deviceDetectionService: DeviceDetectionService, public loadingCtrl: LoadingController) {
     // set sample data
     // this.devices = deviceDetectionService.getAll();
 
@@ -25,7 +28,9 @@ export class DeviceDetectionPage {
   }
 
   addDevice() {
-      
+      console.log('add device');
+      this.storage.set('detectedDevice', this.detectedDevices);
+      this.nav.push(DevicesPage);
   }
 
   presentLoading(onDidDismissFunction) {

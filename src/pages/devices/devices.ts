@@ -1,5 +1,7 @@
-import {Component} from "@angular/core";
+import {Component, NgZone} from "@angular/core";
 import {NavController, AlertController, PopoverController} from "ionic-angular";
+import {Storage} from '@ionic/storage';
+
 import {DeviceService} from "../../services/device-service";
 import {TripDetailPage} from "../trip-detail/trip-detail";
 import {DeviceDetectionPage} from "../device-detection/device-detection";
@@ -14,10 +16,32 @@ import {LoginPage} from "../login/login";
 export class DevicesPage {
   // list of trips
   public devices: any;
+  public numOfDevices: 0;
 
-  constructor(public nav: NavController, public deviceService: DeviceService, public alertCtrl: AlertController, public popoverCtrl: PopoverController) {
+  constructor(private ngZone: NgZone, private storage: Storage, public nav: NavController, public deviceService: DeviceService, public alertCtrl: AlertController, public popoverCtrl: PopoverController) {
     // set sample data
-    this.devices = deviceService.getAll();
+    //this.devices = deviceService.getAll();
+    // this.storage.remove('detectedDevice');
+
+  }
+
+  ngOnInit() {
+    this.storage.get('detectedDevice').then((val) => {
+
+      this.ngZone.run(() => {
+        console.log('storage : ', val);
+        if (val === null) {
+          this.devices = null;
+        } else {
+          this.devices = val;
+        }
+        this.numOfDevices = this.devices ? this.devices.length : 0;
+        //this.cdr.detectChanges();
+      });
+      
+    }).catch((err) => {
+      console.log(err)
+    });
   }
 
   // view trip detail

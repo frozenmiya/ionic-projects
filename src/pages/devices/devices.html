@@ -20,14 +20,14 @@
   <!--  -->
   <ion-toolbar padding color="light">
     <p ion-text no-margin class="text-white">
-      <strong>등록된 기기가 없습니다.</strong>
+      <strong>{{ !numOfDevices ? '등록된 기기가 없습니다.' : '등록된 ' +numOfDevices + '개의 기기'}}</strong>
     </p>
   </ion-toolbar>
 
 </ion-header>
   
 <ion-content padding class="trips detail-bg">
-  <div class="trip card" *ngFor="let device of devices" tappable (click)="findDevice()" margin-bottom [ngStyle]="{ 'text-align': 'center', 'padding': '3em 0' }">
+  <div *ngIf="devices == null" class="trip card" tappable (click)="findDevice()" margin-bottom [ngStyle]="{ 'text-align': 'center', 'padding': '3em 0' }">
       <div class="background">
         <div class="add-device-icon">
             <ion-icon ios="ios-add-circle" md="md-add-circle" [ngStyle]="{ 'font-size': '2em' }"></ion-icon>
@@ -39,21 +39,24 @@
     </div>
 
   <!--list of devices-->
-  <!-- <div class="trip card" *ngFor="let device of devices" tappable (click)="viewDetail(device.id)" margin-bottom>
+  <div class="trip card" *ngFor="let device of devices" tappable (click)="viewDetail(device.id)" margin-bottom>
     <div class="background border-bottom" [ngStyle]="{'background-image': 'url(' + device.thumb + ')'}">
       <div class="background-filter rlt">
+        <div class="align-top" padding-left padding-right padding-top>
+            <span class="pull-right" color="light" ion-text><strong>{{ '생성일: '+ device.created_time }}</strong></span>
+        </div>
         <div class="align-bottom" padding-left padding-right>
           <h6 class="pull-left text-white" ion-text>{{ device.name }}</h6>
-          <h6 class="pull-right text-white" ion-text>{{ device.price_adult | currency:'USD':true }}</h6>
+          <h6 class="pull-right text-white" ion-text>{{ 'ID: ' + device.id }}</h6>
           <div class="clear"></div>
         </div>
       </div>
     </div>
     <div class="padding-sm primary-bg">
       <ion-icon name="time" class="text-white"></ion-icon>
-      <span ion-text class="text-white">{{ device.time }}</span>
-      <span class="pull-right" ion-text color="light"><strong>per adult</strong> (childs has <span ion-text  class="text-green bold">50% OFF</span>)</span>
+      <span ion-text class="text-white"></span>
+      <span ion-text color="light"><strong>필터교체까지 남은시간: </strong> <span ion-text  class="text-green bold">{{ device.time }}</span></span>
     </div>
-  </div> -->
+  </div>
 </ion-content>
   
