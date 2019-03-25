@@ -15,8 +15,17 @@ export let DEVICES = [
     images: [
       "assets/img/product.jpg"
     ],
-    highlights: [
-      "Genis Puri"
+    filters: [
+      "1. 필터: 정상",
+      "2. 필터: 정상",
+      "3. 필터: 정상",
+      "4. 필터: 정상"
+    ],
+    summary: [
+      "기기 생성일: 2019/03/29",
+      "다음 교체할 필터: 첫번째 필터",
+      "다음필터 교체까지 남은시간: 30일 14시간 남음",
+      "스마트모드 On/Off: On "
     ]
   }
 ]

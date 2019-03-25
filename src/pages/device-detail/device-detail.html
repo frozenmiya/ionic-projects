@@ -25,11 +25,11 @@
         <div class="text-sm">
           <div>
             <ion-icon name="time" class="text-white"></ion-icon>
-            <span ion-text color="light">{{ device.time }}</span>
-            <ion-icon name="checkbox-outline" margin-left class="text-white" *ngIf="device.free_cancellation"></ion-icon>
-            <span ion-text color="light" *ngIf="device.free_cancellation">Free cancellation</span>
-            <ion-icon name="list-box" margin-left class="text-white" *ngIf="device.electric_voucher"></ion-icon>
-            <span ion-text color="light" *ngIf="device.electric_voucher">Electronic voucher</span>
+            <span ion-text color="light">{{ '다음 필터교체까지 '+ device.time }}</span>
+            <ion-icon ios="ios-water" md="md-water" margin-left class="text-white" *ngIf="device.free_cancellation"></ion-icon>
+            <span ion-text color="light" *ngIf="device.free_cancellation">수량: 많음 <ion-icon ios="ios-happy" md="md-happy" class="text-green"></ion-icon></span>
+            <ion-icon ios="ios-water-outline" md="md-water" margin-left class="text-white" *ngIf="device.electric_voucher"></ion-icon>
+            <span ion-text color="light" *ngIf="device.electric_voucher">수질: 양호 <ion-icon ios="ios-happy" md="md-happy" class="text-green"></ion-icon></span>
           </div>
         </div>
       </ion-col>
@@ -38,11 +38,11 @@
 
   <!--high light-->
   <div class="border-bottom" padding>
-    <span ion-text color="dark" class="bold">HIGHLIGHT</span>
+    <span ion-text color="dark" class="bold">요약</span>
     <ul class="highlight">
-      <li *ngFor="let highlight of device.highlights">
+      <li *ngFor="let summary of device.summary">
         <ion-icon name="checkmark" class="text-green"></ion-icon>
-        <span ion-text color="primary">{{ highlight }}</span>
+        <span ion-text color="primary">{{ summary }}</span>
       </li>
     </ul>
   </div>
@@ -50,21 +50,13 @@
   <!--booking form-->
   <div class="booking-form card round" margin>
     <div class="border-bottom" padding>
-      <h5>{{ device.sub_name }}</h5>
+      <h5>필터상태</h5>
 
       <!--choose guest-->
       <ion-grid class="filters" no-padding margin-top>
         <ion-row>
-          <ion-col class="adult" width-70>
-            <span ion-text color="primary"><strong>{{ device.price_adult | currency:'USD':true }}</strong> Adults</span>
-          </ion-col>
-          <ion-col width-10 text-center>
-            <ion-icon name="remove-circle" class="text-2x" tappable (click)="minusAdult()" [hidden]="adults < 2"
-                      color="secondary"></ion-icon>
-          </ion-col>
-          <ion-col width-10 text-center>{{ adults }}</ion-col>
-          <ion-col width-10 text-center>
-            <ion-icon name="add-circle" class="text-2x" tappable (click)="plusAdult()" color="secondary"></ion-icon>
+          <ion-col width-70 text-center>
+            <span><strong>첫번째 필터</strong></span>
           </ion-col>
         </ion-row>
         <ion-row margin-top>
