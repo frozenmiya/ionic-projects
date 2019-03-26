@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {NavController, Platform} from "ionic-angular";
+import {NavController, Platform, AlertController} from "ionic-angular";
 import {DeviceService} from "../../services/device-service";
 import {CheckoutTripPage} from "../checkout-trip/checkout-trip";
 import { HomePage } from "../home/home";
@@ -17,12 +17,41 @@ export class DeviceDetailPage {
   // number of children
   public children = 0;
 
-  constructor(public nav: NavController, public deviceService: DeviceService, platform: Platform) {
+  constructor(public nav: NavController, public deviceService: DeviceService, platform: Platform, public alertCtrl: AlertController) {
     // set sample data
     this.device = deviceService.getItem('EPF129V0D350');
 
     this.isAndroid = platform.is('android');
   }
+
+  goToHomePage() {
+    this.nav.push(HomePage);
+  }
+
+  powerAlert() {
+    const alert = this.alertCtrl.create({
+      title: '기기 On/Off 알림',
+      subTitle: '기기 전원상태를 변경하시겠습니까?',
+      buttons: [
+          {
+            text: '취소',
+            handler: data => {
+              console.log('Cancel clicked');
+            }
+          },
+          {
+            text: '확인',
+            handler: data => {
+              console.log('Saved clicked');
+              //turn on or off the machine.
+            }
+          }
+        ]
+    });
+    alert.present();
+  }
+
+  
 
   // minus adult when click minus button
   minusAdult() {

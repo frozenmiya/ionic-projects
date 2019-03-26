@@ -62,16 +62,16 @@ page-trip-detail,
 .wave {
   opacity: .4;
   position: absolute;
-  bottom: 0;
-  left: 50%;
+  bottom: -20%;
+  left: 30%;
   background: #0af;
-  width: 500px;
-  height: 500px;
+  width: 700px;
+  height: 700px;
   margin-left: -250px;
-  margin-top: -250px;
+  margin-top: -500px;
   transform-origin: 50% 48%;
   border-radius: 43%;
-  animation: drift 3000ms infinite linear, moving 7s;
+  animation: drift 3000ms infinite linear, moving 3s;
 }
 
 .wave.-three {
@@ -79,9 +79,9 @@ page-trip-detail,
 }
 
 .wave.-two {
-  animation: drift 7000ms infinite linear, moving 3s;
+  animation: drift 7000ms infinite linear, moving 7s;
   opacity: .1;
-  background: yellow;
+  // background: yellow;
 }
 
 .box:after {
@@ -119,8 +119,8 @@ page-trip-detail,
 }
 
 @keyframes moving {
-  from { bottom: -500px; }
-  to { bottom: 0 }
+  from { bottom: -700px; }
+  to { bottom: -20% }
 }
 
 .wave-bg{

@@ -1,16 +1,23 @@
 import {Injectable} from "@angular/core";
 import {DEVICES} from "./mock-devices";
+import {DEVICE_INFO} from "./mock-device-info";
 
 @Injectable()
 export class DeviceService {
   private devices: any;
+  private deviceInfo: any;
 
   constructor() {
     this.devices = DEVICES;
+    this.deviceInfo = DEVICE_INFO;
   }
 
   getAll() {
     return this.devices;
+  }
+
+  getDeviceInfo() {
+    return this.deviceInfo;
   }
 
   getItem(id) {

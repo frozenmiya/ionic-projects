@@ -1,0 +1,51 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>정보</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-item-group *ngFor="let device of deviceInfo">
+        <ion-item-divider></ion-item-divider>
+        <ion-item>
+            <h2>이름</h2>
+            <ion-note item-end>{{ device.name }}</ion-note>
+        </ion-item>
+        <ion-item>
+            <h2>아이디</h2>
+            <ion-note item-end>{{ device.id }}</ion-note>
+        </ion-item>
+        <ion-item>
+            <h2>모델</h2>
+            <ion-note item-end>{{ device.model }}</ion-note>
+        </ion-item>
+        <ion-item>
+            <h2>Wi-Fi 사용여부</h2>
+            <ion-note item-end>{{ device.wi_fi }}</ion-note>
+        </ion-item>
+        <ion-item>
+            <h2>Wi-Fi 주소</h2>
+            <ion-note item-end>{{ device.wi_fi_add }}</ion-note>
+        </ion-item>
+        <ion-item>
+            <h2>제조일</h2>
+            <ion-note item-end>{{ device.created_time }}</ion-note>
+        </ion-item>
+        <ion-item>
+            <h2>버전</h2>
+            <ion-note item-end>{{ device.version }}</ion-note>
+        </ion-item>
+        <ion-item>
+            <h2>일련번호</h2>
+            <ion-note item-end>{{ device.key_chain }}</ion-note>
+        </ion-item>
+        <ion-item>
+            <h2>펌웨어 버전</h2>
+            <ion-note item-end>{{ device.firmware_version }}</ion-note>
+        </ion-item>
+        <ion-item>
+            <h2>언어</h2>
+            <ion-note item-end>{{ device.language }}</ion-note>
+        </ion-item>
+    </ion-item-group>
+</ion-content>

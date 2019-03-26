@@ -8,7 +8,7 @@ import { Keyboard } from '@ionic-native/keyboard';
 import { HomePage } from "../pages/home/home";
 import { LoginPage } from "../pages/login/login";
 import { DevicesPage } from "../pages/devices/devices";
-import { DeviceDetailPage } from "../pages/device-detail/device-detail";
+import { DeviceInfoPage } from "../pages/device-info/device-info";
 import { LocalWeatherPage } from "../pages/local-weather/local-weather";
 
 export interface MenuItem {
@@ -24,7 +24,7 @@ export interface MenuItem {
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = DeviceDetailPage; //처음 로딩됐을때 나오는 페이지 설정 
+  rootPage: any = DevicesPage; //처음 로딩됐을때 나오는 페이지 설정 
 
   appMenuItems: Array<MenuItem>;
 

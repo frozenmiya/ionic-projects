@@ -29,6 +29,7 @@ import {DeviceDetectionPage} from "../pages/device-detection/device-detection";
 import {LocalWeatherPage} from "../pages/local-weather/local-weather";
 import {DeviceService} from "../services/device-service";
 import {DeviceDetectionService} from "../services/device-detection-service";
+import {DeviceInfoPage} from "../pages/device-info/device-info";
 
 // import services
 // end import services
@@ -52,7 +53,8 @@ import {DeviceDetectionService} from "../services/device-detection-service";
     TripsPage,
     DevicesPage,
     DeviceDetectionPage,
-    DeviceDetailPage
+    DeviceDetailPage,
+    DeviceInfoPage
   ],
   imports: [
     BrowserModule,
@@ -82,7 +84,8 @@ import {DeviceDetectionService} from "../services/device-detection-service";
     TripsPage,
     DevicesPage,
     DeviceDetectionPage,
-    DeviceDetailPage
+    DeviceDetailPage,
+    DeviceInfoPage
   ],
   providers: [
     StatusBar,
