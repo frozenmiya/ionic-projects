@@ -6,9 +6,19 @@ import { HomePage } from "../home/home";
 
 @Component({
   selector: 'page-device-detail',
-  templateUrl: 'device-detail.html'
+  //templateUrl: 'device-detail.html'
+  template: `
+  <ion-header>
+    <ion-navbar>
+      <ion-title>Tabs</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content>
+  </ion-content>
+    `
 })
-export class DeviceDetailPage {
+export class BasicPage {
   isAndroid: boolean = false;
   // trip info
   public device: any;
@@ -50,3 +60,16 @@ export class DeviceDetailPage {
   }
 }
 
+
+@Component({
+  template: `
+  <ion-tabs class="tabs-basic">
+    <ion-tab tabTitle="Music" [root]="rootPage"></ion-tab>
+    <ion-tab tabTitle="Movies" [root]="rootPage"></ion-tab>
+    <ion-tab tabTitle="Games" [root]="rootPage"></ion-tab>
+  </ion-tabs>
+`})
+export class DeviceDetailPage {
+  rootPage = HomePage;
+
+}
