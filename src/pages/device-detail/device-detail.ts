@@ -2,7 +2,7 @@ import {Component} from "@angular/core";
 import {NavController, Platform, AlertController} from "ionic-angular";
 import {DeviceService} from "../../services/device-service";
 import {CheckoutTripPage} from "../checkout-trip/checkout-trip";
-import { HomePage } from "../home/home";
+import {DeviceInfoPage} from "../device-info/device-info";
 
 @Component({
   selector: 'page-device-detail',
@@ -24,8 +24,8 @@ export class DeviceDetailPage {
     this.isAndroid = platform.is('android');
   }
 
-  goToHomePage() {
-    this.nav.push(HomePage);
+  goToDeviceInfoPage() {
+    this.nav.push(DeviceInfoPage);
   }
 
   powerAlert() {
