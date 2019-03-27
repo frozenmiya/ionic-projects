@@ -19,7 +19,7 @@
   <ion-grid>
     <ion-row margin-bottom margin-top>
       <ion-col col-12 text-center margin-bottom margin-top>
-        <div padding-top padding-bottom><span class="water-quality" [ngStyle]="{'font-size': '4em'}">005</span> TDS <br/> 오염도</div>
+        <div padding-top padding-bottom><span class="water-quality" [ngStyle]="{'font-size': '4em'}">00{{tds}}</span> TDS <br/> 오염도</div>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -27,40 +27,40 @@
     <ion-item class="wave-bg">
       <ion-icon name='color-fill' item-start></ion-icon>
       <h2>물의 양</h2>
-      <p>약 3일뒤 보충 권장</p>
-      <ion-note item-end>79%</ion-note>
+      <p [ngStyle]="{'color': '#fff'}">약 3일뒤 보충 권장</p>
+      <ion-note item-end class="text-white">79%</ion-note>
       <ion-icon name="arrow-forward" item-end tappable (click)="goToDeviceInfoPage()"></ion-icon>
     </ion-item>
 
     <ion-item class="wave-bg">
       <ion-icon name="barcode" item-start></ion-icon>
       <h2>세디먼트 필터</h2>
-      <p>필터 교체까지 약 2개월 남음</p>
-      <ion-note item-end>89%</ion-note>
+      <p [ngStyle]="{'color': '#fff'}">필터 교체까지 약 2개월 남음</p>
+      <ion-note item-end class="text-white">89%</ion-note>
       <ion-icon name="arrow-forward" item-end></ion-icon>
     </ion-item>
 
     <ion-item class="wave-bg">
       <ion-icon name="barcode" item-start></ion-icon>
       <h2>프리카본 필터</h2>
-      <p>필터 교체까지 약 5개월 남음</p>
-      <ion-note item-end>94%</ion-note>
+      <p [ngStyle]="{'color': '#fff'}">필터 교체까지 약 5개월 남음</p>
+      <ion-note item-end class="text-white">94%</ion-note>
       <ion-icon name="arrow-forward" item-end></ion-icon>
     </ion-item>
 
       <ion-item class="wave-bg">
         <ion-icon name="barcode" item-start></ion-icon>
         <h2>나노케어 필터</h2>
-        <p>필터 교체까지 11개월 남음</p>
-        <ion-note item-end>98%</ion-note>
+        <p [ngStyle]="{'color': '#fff'}">필터 교체까지 11개월 남음</p>
+        <ion-note item-end class="text-white">98%</ion-note>
         <ion-icon name="arrow-forward" item-end></ion-icon>
       </ion-item>
 
       <ion-item class="wave-bg">
         <ion-icon name="barcode" item-start></ion-icon>
         <h2>포스트카본 필터</h2>
-        <p>필터 교체까지 11개월 남음</p>
-        <ion-note item-end>98%</ion-note>
+        <p [ngStyle]="{'color': '#fff'}">필터 교체까지 11개월 남음</p>
+        <ion-note item-end class="text-white">98%</ion-note>
         <ion-icon name="arrow-forward" item-end></ion-icon>
       </ion-item>
 
@@ -68,7 +68,7 @@
       <ion-toggle checked="true"></ion-toggle>
       <ion-label>
           <h2>동작주기</h2>
-          <p>매 5분마다</p>
+          <p [ngStyle]="{'color': '#fff'}">매 5분마다</p>
       </ion-label>
       <ion-icon name='time' item-start></ion-icon>
       <ion-icon name="arrow-forward" item-end></ion-icon>
@@ -78,7 +78,7 @@
       <ion-toggle checked="true"></ion-toggle>
       <ion-label>
           <h2>나이트 모드</h2>
-          <p>22:00 ~ 06:00</p>
+          <p [ngStyle]="{'color': '#fff'}">22:00 ~ 06:00</p>
       </ion-label>
       <ion-icon name='moon' item-start></ion-icon>
       <ion-icon name="arrow-forward" item-end></ion-icon>

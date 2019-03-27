@@ -1,6 +1,6 @@
 <!-- -->
 <ion-header>
-    <ion-navbar color="primary">
+    <ion-navbar color="primary" [ngStyle]="{'padding-top': '10px'}">
       <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
@@ -55,7 +55,7 @@
     <div class="padding-sm primary-bg">
       <ion-icon name="time" class="text-white"></ion-icon>
       <span ion-text class="text-white"></span>
-      <span ion-text color="light"><strong>필터교체까지 남은시간: </strong> <span ion-text  class="text-green bold">{{ device.time }}</span></span>
+      <span ion-text color="light"><strong>다음필터 교체까지 남은시간: </strong> <span ion-text  class="text-green bold">{{ device.time }}</span></span>
     </div>
   </div>
 </ion-content>

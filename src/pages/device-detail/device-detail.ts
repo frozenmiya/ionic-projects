@@ -16,12 +16,19 @@ export class DeviceDetailPage {
   public adults = 2;
   // number of children
   public children = 0;
+  public tds = 0;
 
   constructor(public nav: NavController, public deviceService: DeviceService, platform: Platform, public alertCtrl: AlertController) {
     // set sample data
     this.device = deviceService.getItem('EPF129V0D350');
 
     this.isAndroid = platform.is('android');
+
+  }
+
+  ionViewDidEnter(){
+      console.log("ionViewDidEnter");
+      this.setTds();
   }
 
   goToDeviceInfoPage() {
@@ -49,6 +56,17 @@ export class DeviceDetailPage {
         ]
     });
     alert.present();
+  }
+
+  setTds() {
+    let arr = [5, 6, 7, 8, 9];
+
+    for( let i = 0; i < 5; i++ ){
+      setTimeout(()=>{
+        let rand = arr[Math.floor(Math.random() * arr.length)];
+        this.tds = rand;
+      }, 5000*i);
+    }
   }
 
   

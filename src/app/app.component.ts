@@ -7,7 +7,6 @@ import { Keyboard } from '@ionic-native/keyboard';
 
 import { LoginPage } from "../pages/login/login";
 import { DevicesPage } from "../pages/devices/devices";
-import { LocalWeatherPage } from "../pages/local-weather/local-weather";
 
 export interface MenuItem {
     title: string;
@@ -35,8 +34,8 @@ export class MyApp {
     this.initializeApp();
 
     this.appMenuItems = [
-      {title: 'Home', component: DevicesPage, icon: 'home'},
-      {title: 'Local Weather', component: LocalWeatherPage, icon: 'partly-sunny'}
+      {title: '나의 기기', component: DevicesPage, icon: 'home'}
+      // {title: 'Local Weather', component: LocalWeatherPage, icon: 'partly-sunny'}
     ];
   }
 
@@ -49,7 +48,8 @@ export class MyApp {
       // this.splashScreen.hide();
 
       //*** Control Status Bar
-      this.statusBar.styleDefault();
+      // this.statusBar.styleDefault();
+      this.statusBar.styleLightContent();
       this.statusBar.overlaysWebView(false);
 
       //*** Control Keyboard

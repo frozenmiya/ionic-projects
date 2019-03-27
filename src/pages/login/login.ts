@@ -1,7 +1,7 @@
 import {Component} from "@angular/core";
 import {NavController, AlertController, ToastController, MenuController} from "ionic-angular";
 // import {HomePage} from "../home/home";
-// import {DevicesPage} from "../devices/devices";
+import {DevicesPage} from "../devices/devices";
 import {DeviceDetectionPage} from "../device-detection/device-detection";
 import {RegisterPage} from "../register/register";
 
@@ -18,6 +18,10 @@ export class LoginPage {
   // go to register page
   register() {
     this.nav.setRoot(RegisterPage);
+  }
+
+  goToDevicesPage() {
+    this.nav.push(DevicesPage);
   }
 
   // login and go to home page
