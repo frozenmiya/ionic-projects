@@ -4,7 +4,6 @@ import {Storage} from '@ionic/storage';
 
 import {DeviceService} from "../../services/device-service";
 import {DeviceDetailPage} from "../device-detail/device-detail";
-import {DeviceDetectionPage} from "../device-detection/device-detection";
 import {NotificationsPage} from "../notifications/notifications";
 import {SettingsPage} from "../settings/settings";
 import {LoginPage} from "../login/login";

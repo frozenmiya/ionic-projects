@@ -26,10 +26,11 @@
     "@ionic-native/status-bar": "3.12.1",
     "@ionic/storage": "2.0.1",
     "cordova-android": "^6.3.0",
-    "cordova-ios": "^4.4.0",
+    "cordova-ios": "^5.0.0",
     "cordova-plugin-console": "^1.1.0",
     "cordova-plugin-device": "^1.1.6",
     "cordova-plugin-splashscreen": "^4.0.3",
+    "cordova-plugin-sqlite": "^1.0.3",
     "cordova-plugin-statusbar": "^2.2.3",
     "cordova-plugin-whitelist": "^1.3.2",
     "ionic-angular": "3.8.0",
@@ -59,8 +60,7 @@
       "cordova-sqlite-storage": {}
     },
     "platforms": [
-      "android",
-      "ios"
+      "android"
     ]
   },
   "config": {

@@ -5,10 +5,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Keyboard } from '@ionic-native/keyboard';
 
-import { HomePage } from "../pages/home/home";
 import { LoginPage } from "../pages/login/login";
 import { DevicesPage } from "../pages/devices/devices";
-import { DeviceInfoPage } from "../pages/device-info/device-info";
 import { LocalWeatherPage } from "../pages/local-weather/local-weather";
 
 export interface MenuItem {

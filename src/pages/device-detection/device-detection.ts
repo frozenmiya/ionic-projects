@@ -46,7 +46,7 @@ export class DeviceDetectionPage {
 
       setTimeout(() => { //기기 감지 api 연동 필요
           loader.dismiss();
-      }, 3000);
+      }, 7000);
   }
 
   addDeviceLoading(onComplete) {
